@@ -2,7 +2,9 @@ console.log("Quizz about Abhishek!");
 console.log("---#---#---#---");
 
 // declaring data
-
+var chalk = require("chalk");
+const red = chalk.red;
+const green = chalk.green;
 var readLineSync = require('readline-sync');
 
 var score = 0;
@@ -38,11 +40,11 @@ function play(question, answer) {
   var userAnswer = readLineSync.question(question);
 
   if (userAnswer.toUpperCase() === answer.toUpperCase()) { // branching
-    console.log("right!");
+    console.log(green("right!"));
     score = score + 1;
     
   } else {
-    console.log("Wrong answer!");
+    console.log(red("Wrong answer!"));
    
   }
 
